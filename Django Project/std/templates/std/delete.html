@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div class="pop container-sm w-50 shadow-lg">
+    <div class="flex align-text-bottom align-content-center">
+        <form action="" method="post">
+            <h2>
+                {{roll.Roll}}
+                <br>
+                {{roll.Name}}
+            </h2>
+            <h3>Are you sure You wanna delete</h3>
+            <input class="btn btn-danger" type="submit" name="submit" value="Confirm" />
+            <input class="btn btn-info" type="submit" name="Cancel" value="Cancel" />
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+<style>
+    .pop {
+        height: 350px;
+        text-align: center;
+    }
+    h2{
+        margin: 10%;
+    }
+</style>
+
+{% endblock content %}

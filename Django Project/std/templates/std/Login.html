@@ -1,0 +1,113 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+
+    {% for msg in messages %}
+    {% if msg == 'msg_success' %}
+    <div class="alert alert-info" role="alert">
+        {{msg}}
+    </div>
+    {% else %}
+    <div class="alert alert-danger" role="alert">{{msg}}</div>
+    {% endif %}
+    {% endfor %}
+    {% if page == 'login' %}
+    <div class="login shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <h1 class="text-center">Login</h1>
+
+        <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-control" type="email" name="email" id="email" placeholder="Enter Your Email ID">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" name="pass" id="pass" placeholder="Enter Your Password">
+        </div>
+        <br>
+
+        <input class="btn btn-secondary w-100" type="submit" id="signin">
+
+        <center><a href="{% url 'signup' %}">Create a account</a></center>
+    </div>
+</form>
+{% else %}
+
+<div class="login shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <h1 class="text-center">Register</h1>
+
+    <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-control" type="email" name="email" id="email" placeholder="Enter Your Email ID">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="Name">Name</label>
+        <input class="form-control" type="text" name="username" placeholder="Enter Your Name">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="Roll">Roll No</label>
+        <input class="form-control" type="text" id="roll" name="roll" placeholder="Enter Your Roll No">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="pass" name="pass" placeholder="Enter Your Password">
+    </div>
+    <br>
+
+    <input class="btn btn-secondary w-100" type="submit" id="signin">
+    <br>
+    <br>
+    <a href="{% url 'login' %}"> <button class="btn btn-secondary w-100">Back To Login</button></a>
+
+
+</div>
+{% endif %}
+
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .login {
+        width: 360px;
+        height: 350px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .login h1 {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+
+    .login form {
+        font-size: 20px;
+    }
+
+    .login form .form-group {
+        margin-bottom: 10px;
+    }
+
+    .login form input[type="submit"] {
+        font-size: 20px;
+        margin-top: 35px;
+    }
+</style>
+
+{% endblock content %}

@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="content">
+    <h1>Sphoorthy Engineering College</h1>
+    <p>The Helpdesk Management</p>
+    <button class="btn btn-success">Events</button>
+    <button class="btn btn-danger">Contact</button>
+</div>
+<div class="evn-container container-md shadow-lg">
+    <br>
+    <img src="https://www.sphoorthyengg.ac.in/public/assets/uploads/banners/benner-1681971021.jpeg"
+        class="img-thumbnail">
+    <div class="matter align-content-end">
+        <p>
+        <h3>Welcome To SPHN</h3>
+        <p>Established in 2004, Sphoorthy Engineering college has been excelling in research and entrepreneurship
+            ever since its inception. In the last decade, it has given hundreds of engineers and leaders to the
+            nation.
+
+            Sphoorthy Engineering College was established in 2004, it is well known for its innovative spirit,
+            intensive research and hands-on approach to solve real world problems, producing skilful engineers who
+            are well received by industry and academia.</p>
+        <p>
+            The institution is approved by AICTE, New Delhi and permanently affiliated to Jawaharlal Nehru
+            Technological University (JNTU), Hyderabad. It is accredited with “A Grade” by NAAC. The institution
+            provides state of the art facilities and infrastructure for promoting technological advancement and
+            innovation.
+
+            Sphoorthy Engineering College continues to strive to be a learning hub for the students and equips them
+            with on-demand skills to be readily employable in diversified career pathways.
+
+            The Institute encourages collaborative learning between industry and academia as a means of reinforcing
+            its curriculum with practical and real-world experiences. It is this emphasis on a well-rounded
+            education that makes a preferred institute among engineering colleges.
+
+            <br>
+            <br>
+            For more details<br>
+            Contact:<br>
+            +91 93921 19392<br>
+            +91 99666 31091
+            <br>
+            Email id: admissions@sphoorthyengg.ac.in<br>
+        </p>
+        </p>
+    </div>
+    <center>
+        <div class="comments">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Type Here...." name="message">
+            </form>
+        </div>
+    </center>
+    <br>
+    <br>
+
+</div>
+<style>
+    .content {
+        text-align: center;
+        position: absolute;
+        top: 30%;
+        left: 28%;
+    }
+
+    .evn-container {
+        margin: 10px;
+        position: absolute;
+        top: 70%;
+        left: 8%;
+    }
+</style>
+{% endblock content %}
